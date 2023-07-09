@@ -1,0 +1,24 @@
+.grid {
+  border: 2px solid #a8dadc;
+  width: 70rem;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: center;
+  
+}
+
+.grid-squares {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    
+    width: 80rem;
+    height: 80rem;
+    display: flex;
+    justify-content: center;
+}
