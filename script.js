@@ -5,9 +5,13 @@ const applySizeButton = document.querySelector(".apply");
 const resetColorButton = document.querySelector(".reset-color");
 
 let gridSize = document.querySelector("input").valueAsNumber;
+
 createGrid(gridSize);
 
 function createGrid(gridSize) {
+
+    grid.style.gridTemplateColumns = `repeat(${gridSize}, 2fr)`;
+    grid.style.gridTemplateRows = `repeat(${gridSize}, 2fr)`;
     
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
@@ -51,9 +55,7 @@ function resetGrid() {
     });
 }
 
-resetColorButton.addEventListener("click", () => {
-    resetColor();
-});
+resetColorButton.addEventListener("click", () => resetColor());
 
 applySizeButton.addEventListener("click", () => {
     resetGrid();
