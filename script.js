@@ -5,6 +5,7 @@ const applySizeButton = document.querySelector(".apply");
 const resetColorButton = document.querySelector(".reset-color");
 
 let gridSize = document.querySelector("input").valueAsNumber;
+createGrid(gridSize);
 
 function createGrid(gridSize) {
     
@@ -34,8 +35,6 @@ function getRandomColor() {
     }
     return color;
   }
-
-createGrid(gridSize);
 
 function resetColor() {
     const gridSquares = document.querySelectorAll(".grid-square");
