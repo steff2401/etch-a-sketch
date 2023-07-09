@@ -1,5 +1,5 @@
 .grid {
-  border: 2px solid #a8dadc;
+  border: 2px solid lightgrey;
   width: 70rem;
   height: fit-content;
   position: relative;
@@ -16,9 +16,8 @@
 }
 
 .container {
-    
     width: 80rem;
-    height: 80rem;
+    height: 100vh;
     display: flex;
     justify-content: center;
 }

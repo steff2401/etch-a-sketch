@@ -1,7 +1,10 @@
-const gridDiv = document.querySelector(".grid");
+const grid = document.querySelector(".grid");
+const gridSizeInput = document.querySelector("input");
+const gridSizeInputDisplay = document.querySelector(".size");
+const applySizeButton = document.querySelector(".apply");
+const resetColorButton = document.querySelector(".reset-color");
+
 let gridSize = document.querySelector("input").valueAsNumber;
-const sizeDisplay = document.querySelector(".size");
-sizeDisplay.textContent = `${gridSize}x${gridSize}`;
 
 function createGrid(gridSize) {
     
@@ -11,14 +14,16 @@ function createGrid(gridSize) {
             const gridSquare = document.createElement("div");
             gridSquare.classList.add("grid-square");
     
-            gridSquare.style.width = `${gridDiv.clientWidth / gridSize}px`;
-            gridSquare.style.height = `${gridDiv.clientWidth / gridSize}px`;
+            gridSquare.style.width = `${grid.clientWidth / gridSize}px`;
+            gridSquare.style.height = `${grid.clientWidth / gridSize}px`;
     
-            gridSquare.addEventListener("mouseover", () => {
-                gridSquare.style.backgroundColor = "black";
-            })
+            gridSquare.addEventListener("mouseover", (e) => {
+                if (e.buttons === 1) { // left mouse button must be pressed down
+                    gridSquare.style.backgroundColor = "black";  
+                }
+            });
             
-            gridDiv.appendChild(gridSquare);
+            grid.appendChild(gridSquare);
         }
     }
 }
@@ -40,23 +45,18 @@ function resetGrid() {
     })
 }
 
-const resetButton = document.querySelector(".reset");
-
-resetButton.addEventListener("click", () => {
+resetColorButton.addEventListener("click", () => {
     resetColor();
 });
 
-const applyButton = document.querySelector(".apply");
-
-applyButton.addEventListener("click", () => {
+applySizeButton.addEventListener("click", () => {
     resetGrid();
     gridSize = document.querySelector("input").valueAsNumber;
     createGrid(gridSize);
 });
 
-gridSizeInput = document.querySelector("input");
 gridSizeInput.addEventListener("input", () => {
-    sizeDisplay.textContent = `${gridSizeInput.value}x${gridSizeInput.value}`;
+    gridSizeInputDisplay.textContent = `${gridSizeInput.value}x${gridSizeInput.value}`;
 })
 
 
