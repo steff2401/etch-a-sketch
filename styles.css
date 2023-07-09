@@ -7,7 +7,6 @@
   flex-flow: row wrap;
   justify-content: space-around;
   align-content: center;
-  
 }
 
 .grid-squares {
@@ -20,4 +19,15 @@
     height: 100vh;
     display: flex;
     justify-content: center;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+  gap: 5px;
+}
+
+.size {
+  align-self: center;
 }

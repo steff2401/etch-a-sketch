@@ -17,10 +17,8 @@ function createGrid(gridSize) {
             gridSquare.style.width = `${grid.clientWidth / gridSize}px`;
             gridSquare.style.height = `${grid.clientWidth / gridSize}px`;
     
-            gridSquare.addEventListener("mouseover", (e) => {
-                if (e.buttons === 1) { // left mouse button must be pressed down
-                    gridSquare.style.backgroundColor = "black";  
-                }
+            gridSquare.addEventListener("mouseover", () => {
+                gridSquare.style.backgroundColor = "black";  
             });
             
             grid.appendChild(gridSquare);
@@ -34,7 +32,7 @@ function resetColor() {
     const gridSquares = document.querySelectorAll(".grid-square");
     gridSquares.forEach((square) => {
         square.style.backgroundColor = "white";
-    })
+    });
 }
 
 function resetGrid() {
@@ -42,7 +40,7 @@ function resetGrid() {
     const gridSquares = document.querySelectorAll(".grid-square");
     gridSquares.forEach((square) => {
         square.remove();
-    })
+    });
 }
 
 resetColorButton.addEventListener("click", () => {
@@ -57,6 +55,6 @@ applySizeButton.addEventListener("click", () => {
 
 gridSizeInput.addEventListener("input", () => {
     gridSizeInputDisplay.textContent = `${gridSizeInput.value}x${gridSizeInput.value}`;
-})
+});
 
 
